@@ -2,7 +2,7 @@ function startClassification()
 { 
     navigator.mediaDevices.getUserMedia(
         { audio: true});
-         classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/w01htQWIu/model.json', modelReady);
+         classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/nb-vcBQiW/model.json', modelReady);
          } 
          function modelReady(){ 
              classifier.classify( gotResults); 
@@ -19,25 +19,25 @@ function gotResults(error, results) {
                  document.getElementById("result_label").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
                   document.getElementById("result_confidence").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
 
-img = document.getElementById('alien1') ;
- img1 = document.getElementById('alien2');
-  img2 = document.getElementById('alien3');
-    if (results[0].label == "clap") 
-    { img.src = 'aliens-01.gif';
-     img1.src = 'aliens-02.png';
-      img2.src = 'aliens-03.png';
+img = document.getElementById('animal1') ;
+ img1 = document.getElementById('animal2');
+  img2 = document.getElementById('animal3');
+    if (results[0].label == "cat") 
+    { img.src = 'cat_mute.gif';
+     img1.src = 'dog.jpg';
+      img2.src = 'cow.png';
     
-} else if (results[0].label == "bell")
- { img.src = 'aliens-01.png'; 
- img1.src = 'aliens-02.gif';
-  img2.src = 'aliens-03.png';
+} else if (results[0].label == "cow")
+ { img.src = 'catpiano.png';
+ img2.src = 'cow_m.gif';
+  img1.src = 'dog.jpg';
 
  }
 
- else if (results[0].label == "snap")
- { img.src = 'aliens-01.png'; 
- img1.src = 'aliens-02.png';
-  img2.src = 'aliens-03.gif';
+ else if (results[0].label == "dog")
+ { img.src = 'catpiano.png'; 
+ img2.src = 'cow.png';
+  img1.src = 'dog_b.gif';
 
  }
 
